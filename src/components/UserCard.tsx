@@ -38,7 +38,7 @@ const UserCard: React.FC<Props> = ({ user, onFetchUserRepos }) => {
     <div className="border rounded-lg">
       <button
         onClick={handleToggle}
-        className="w-full flex items-center justify-between gap-3 p-3 bg-white hover:bg-gray-100 transition rounded-t-lg"
+        className="flex items-center justify-between w-full gap-3 p-3 transition bg-white rounded-t-lg hover:bg-gray-100"
       >
         <div className="flex items-center gap-3">
           <img
@@ -46,15 +46,15 @@ const UserCard: React.FC<Props> = ({ user, onFetchUserRepos }) => {
             alt={user.login}
             className="w-10 h-10 rounded-full"
           />
-          <span className="font-medium text-gray-800 text-sm">
+          <span className="text-sm font-medium text-gray-800">
             {user.login}
           </span>
         </div>
-        <span className="text-gray-500 text-xs">{open ? "▲" : "▼"}</span>
+        <span className="text-xs text-gray-500">{open ? "▲" : "▼"}</span>
       </button>
 
       {open && (
-        <div className="p-4 bg-gray-50 border-t text-sm">
+        <div className="p-4 text-sm border-t bg-gray-50">
           {isFetching && !isFetchingNextPage && (
             <div className="w-full text-center">
               <p className="text-blue-500">Loading repositories...</p>
@@ -76,7 +76,7 @@ const UserCard: React.FC<Props> = ({ user, onFetchUserRepos }) => {
           <RepoList repos={repos} />
 
           {hasNextPage && (
-            <div className="mt-3 w-full text-center">
+            <div className="w-full mt-3 text-center">
               <button
                 onClick={() => fetchNextPage()}
                 className="text-sm text-blue-500 hover:underline"

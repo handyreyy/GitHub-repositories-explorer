@@ -1,29 +1,40 @@
-import React, { useState } from "react";
-
 type Props = {
-  onSearch: (query: string) => void;
+  input: string;
+  onInputChange: (value: string) => void;
+  onSearch: () => void;
   loading: boolean;
 };
 
-const SearchBar: React.FC<Props> = ({ onSearch, loading }) => {
-  const [input, setInput] = useState("");
+const SearchBar: React.FC<Props> = ({
+  input,
+  onInputChange,
+  onSearch,
+  loading,
+}) => {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      onSearch();
+    }
+  };
 
   return (
     <div className="w-full max-w-md mx-auto">
       <input
         type="text"
-        placeholder="Search GitHub users..."
         value={input}
-        onChange={(e) => {
-          setInput(e.target.value);
-          onSearch(e.target.value);
-        }}
-        className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 text-sm"
+        onChange={(e) => onInputChange(e.target.value)}
+        onKeyDown={handleKeyDown}
+        placeholder="Search GitHub users..."
+        className="w-full px-4 py-2 text-sm border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
 
-      {loading && (
-        <p className="mt-2 text-center text-blue-500 text-sm">Loading...</p>
-      )}
+      <button
+        onClick={onSearch}
+        disabled={loading}
+        className="w-full py-2 mt-3 text-white transition bg-blue-500 rounded hover:bg-blue-600"
+      >
+        {loading ? "Searching..." : "Search"}
+      </button>
     </div>
   );
 };

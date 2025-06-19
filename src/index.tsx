@@ -1,6 +1,10 @@
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <h1 className="text-green-300">Hello, this is using Vite and Tailwind</h1>
+    <main className="min-h-screen p-4">
+      <Home />
+    </main>
   );
 }
 

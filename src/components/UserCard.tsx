@@ -54,7 +54,7 @@ const UserCard: React.FC<Props> = ({ user, onFetchUserRepos }) => {
       </button>
 
       {open && (
-        <div className="p-4 text-sm border-t bg-gray-50">
+        <div className="p-4 text-sm border-t bg-gray-50 max-h-[300px] overflow-y-auto">
           {isFetching && !isFetchingNextPage && (
             <div className="w-full text-center">
               <p className="text-blue-500">Loading repositories...</p>

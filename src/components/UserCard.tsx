@@ -67,7 +67,7 @@ const UserCard: React.FC<Props> = ({ user, onFetchUserRepos }) => {
             </div>
           )}
 
-          {!isFetching && repos.length === 0 && (
+          {!isFetching && !error && repos.length === 0 && (
             <div className="w-full text-center">
               <p className="text-sm text-gray-500">No repositories found.</p>
             </div>

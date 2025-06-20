@@ -9,19 +9,18 @@ This is a simple React + TypeScript application that allows users to search for 
 - Fully responsive layout (mobile-friendly)
 - Loading and error handling states
 - Built with React + TypeScript + Vite
-- Hosted live on [GitHub Pages / Vercel / Netlify](#)
 
 ## 📸 Demo
 
-Live demo: _(to be replaced later)_
+Live demo: https://git-hub-repositories-explorer-liard.vercel.app/
 
 ## 🧰 Tech Stack
 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/) (optional)
-- [Axios](https://axios-http.com/) for API calls
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Axios](https://axios-http.com/)
 
 ## 📦 Installation
 
@@ -30,4 +29,11 @@ git clone https://github.com/handyreyy/GitHub-repositories-explorer.git
 cd GitHub-repositories-explorer
 npm install
 npm run dev
+```
+
+## 🛠️ Testing
+
+```bash
+npx vitest (for run all tests)
+npx vitest [path] (for run a certain file)
 ```
